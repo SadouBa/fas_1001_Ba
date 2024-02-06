@@ -1,0 +1,80 @@
+---
+title: "TP2"
+author: "Sadou Ba"
+format: pdf
+editor: visual
+---
+
+## Introduction
+
+Depuis la pandémie du sars cov2, les défis auxquels faisaient face de nombreux états au niveau économique, ont été exacerbés. Ainsi, les populations en situation précaires ont souvent vu leur état s'empiré (World Bank, 2022). Ainsi, si ont s'intéresse à la situation des personnes âgés du Canada qui ont en majorité un revenu fixe en raison de la retraite et qui ont très peu de mécanismes pour se prémunir de l'inflation en dehors d'augmenter leurs sources de revenus. Ceci pourrait être une cause de préoccupation. De plus, plusieurs études démontrent que l'espérance de vie en bonne santé a tendance a stagné au pays (INSPQ, 2003). Ainsi, l'espérance de vie qui continue a augmenté au pays pourrait ainsi creuser un écart entre l'espérance de vie en bonne santé et l'espérance de vie. Dans ce travail, nous essayerons de voir s'il y a une corrélation entre l'augmentation des personnes âgés à faible revenu en situation d'incapacité et l'augmentation de l'espérance de vie. Le résultat de cette étude pourrait permettre aux décideurs politiques de prendre des mesures en termes de fiscalité et de santé publique sachant qu'une partie population pourrait être de plus en plus vulnérable dans le futur.
+
+## Méthodologie
+
+Les données utilisées pour cette analyse nous proviennent de deux organismes. Le premier étant Statistiques Canada, à partir de l'enquête canadienne sur le revenu. Cette enquête est une enquête annuelle à participation volontaire. Les autochtones et les personnes vivant en résidence ont été exclus ce qui caractérise moins de 2% de la population(Statistique Canada, 2023). Sur le site de Statistique Canada il est possible de sélectionner les données que nous souhaitons, dans notre cas, il s'agit de prendre les individus en situation d'incapacité ayant 65 ans et plus ce qui est l'âge de la retraite au Canada. Une fois les données sélectionnées, il fut possible de les télécharger sous format csv. À ce moment, il fut pré-nettoyer les donner à l'Intérieur du fichier. Une fois dans R les données ont été nettoyé une seconde fois pour renommer les colonnes et sélectionner les années voulu.
+
+La deuxième source des données est académique et il s'agit de la Base de données sur la longévité Canadienne qui est une initiative du département de démographie de l'université de Montréal (BDLC, 2019). Les données ont été téléchargés sous format txt. Une fois importé sur R l'entête a été sauté d'une ligne et les colonnes sélectionnés furent celles des années et de l'espérance de vie pour les deux sexes ensembles. Ainsi, il ne restait plus qu'à fusionner les deux tableaux de données en utilisant la colonne des années comme clé primaire.
+
+## Résultats
+
+![](_tp/images/regression_tp2.jpeg)
+
+Ce que nous pouvons voir dans le graphique ci-dessus, est qu'il n'y a pas de corrélation entre les 2 variables. Ce qui nous permet par le fait même de supposer qu'il n'y a pas de causalité. Toutefois, la courte période d'étude peut aussi être une des raisons pour laquelle on ne peut observer de corrélation. Sachant que l'espérance de vie suit une évolution dans le temps long il serait plus bénéfique d'attendre plus longtemps pour faire ce genre d'études. Et peut être aussi qu'avec le nombre de données limité il aurait été plus judicieux de faire d'autres analyses qu'une régression linéaire.
+
+## Bibliographie
+
+L'espérance de santé au Québec: revue de différentes estimations pour les années 1986 à 2003, Institut national de santé publique, Québec, 48 p
+
+World Bank. Poverty and Shared Prosperity 2022: Correcting Course. Washington, DC: World Bank. doi:10.1596/978-1-4648-1893-6. License: Creative Commons Attribution CC BY 3.0 IGO
+
+Base de données sur la longévité Canadienne, Espérance de vie à 0 an, <http://www.bdlc.umontreal.ca/bdlc/prov/can/can.htm>, consulté le 5 février 2024.
+
+Statistique Canada. Tableau 11-10-0090-01  Statistiques sur la pauvreté et le faible revenu selon le statut d'incapacité DOI : <https://doi.org/10.25318/1110009001-fra>, consulté le 5 février 2024.
+
+\<div style="page-break-before: always;"\>\</div\>
+
+# Annexe
+
+```{r}
+library(tidyverse)
+
+# importation des données
+library(readr)
+library(readxl)
+revenu_faible_incapacite <- read_excel("_tp/_tp2/Donnees/revenu_faible_incapacite.xlsx")
+
+life_expectancy <- read.table( "_tp/_tp2/Donnees/E0per.txt", header = TRUE, skip = 1)
+View(life_expectancy)
+
+# Nettoyage de la base de données sur l'espérance de vie
+# On garde les données observés seulement entre 2013 et 2021
+esperance_vie <- life_expectancy %>%
+  rename(Annee = Year, EsperanceDeVie = Total)
+
+esperance_vie <- esperance_vie %>% select(-Male, -Female) %>% filter(Annee >= 2013)
+
+#nettoyage de la base de données sur la pauvreté des personnes en état d'incapacité
+
+pauvrete_incapacite <- revenu_faible_incapacite %>% rename(Annee = Statistiques,
+                                                      Pourcentage = Percent_low_rev)
+
+pauvrete_incapacite <- pauvrete_incapacite %>% filter(Annee<=2019)
+
+Base_donnees_final <- merge(pauvrete_incapacite, esperance_vie, by = "Annee")
+
+ # Créer le graphique montrant une régression linéaire
+  graphique_regression <- ggplot(Base_donnees_final, aes(x = EsperanceDeVie, y = Pourcentage)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, 
+                linetype = "solid", linewidth = 1.5) +
+    labs(title = "Régression entre l'Espérance de Vie et l'Évolution de la Pauvreté chez les Personnes Âgées",
+         x = "Espérance de Vie",
+         y = "Évolution de la Pauvreté") +
+    scale_y_continuous(labels = scales::percent_format(scale = 1)) +  
+    theme_minimal()
+  
+print(graphique_regression)  
+  
+
+
+```

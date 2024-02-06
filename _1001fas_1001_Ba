@@ -1,0 +1,71 @@
+[33mcommit d45da55721cc8b3253d2ce7c6a462177a280d105[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mma_branche_ba[m[33m)[m
+Author: Sadou Ba <sadou117@gmail.com>
+Date:   Mon Jan 22 22:06:59 2024 -0500
+
+    creation du document du travail de session
+
+[33mcommit 2f110be4a849e777364390fe1aebe2bf09306964[m
+Author: Sadou Ba <sadou117@gmail.com>
+Date:   Mon Jan 22 21:36:02 2024 -0500
+
+    premier commit
+
+[33mcommit 9dd2e9f1876f27b2e988cfe235446ddc45427800[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Nadjim Frechet <31970826+Nadjim10@users.noreply.github.com>
+Date:   Tue Jan 16 04:57:37 2024 -0500
+
+    Update README.md
+
+[33mcommit e8a8aaa5696951770dad30f300cc52361ddc5e58[m
+Author: Nadjim10 <nadjimfrechet@gmail.com>
+Date:   Tue Jan 16 04:06:59 2024 -0500
+
+    removing tp2 - test done
+
+[33mcommit e039c124311b5a0951b80837552eec0e0aae5eca[m
+Author: Nadjim10 <nadjimfrechet@gmail.com>
+Date:   Tue Jan 16 03:46:30 2024 -0500
+
+    ignore ds store
+
+[33mcommit 7e3f65a14778d0dfd2bfa969989566c325b977b3[m
+Author: Nadjim10 <nadjimfrechet@gmail.com>
+Date:   Tue Jan 16 03:43:12 2024 -0500
+
+    test with tp2
+
+[33mcommit d5460f87732db8978f298e20e1258bff3847d31b[m
+Author: Nadjim Frechet <31970826+Nadjim10@users.noreply.github.com>
+Date:   Tue Jan 16 03:40:05 2024 -0500
+
+    Update README.md
+
+[33mcommit ebe435b42925782e0a756985fb02a7c5a56a9cde[m
+Author: Nadjim10 <nadjimfrechet@gmail.com>
+Date:   Tue Jan 16 03:36:44 2024 -0500
+
+    modif need to revert
+
+[33mcommit 5ecfb40521c098956f666ee83da41edad3c334ca[m
+Author: Nadjim10 <nadjimfrechet@gmail.com>
+Date:   Tue Jan 16 03:33:43 2024 -0500
+
+    remove rproj from gitignore
+
+[33mcommit ea7d6798138001aa6e94d109a6eb308074410bb2[m
+Author: Nadjim Frechet <31970826+Nadjim10@users.noreply.github.com>
+Date:   Tue Jan 16 01:43:16 2024 -0500
+
+    Add files via upload
+
+[33mcommit b8affd10de7ebf22b9c78bda490b0a75c98ffd15[m
+Author: Nadjim Frechet <31970826+Nadjim10@users.noreply.github.com>
+Date:   Tue Jan 16 01:32:18 2024 -0500
+
+    Update README.md
+
+[33mcommit 04ee0fa23a170ec71a3224dca9e8552c2c6d6bda[m
+Author: Nadjim Frechet <31970826+Nadjim10@users.noreply.github.com>
+Date:   Tue Jan 16 01:27:42 2024 -0500
+
+    Initial commit

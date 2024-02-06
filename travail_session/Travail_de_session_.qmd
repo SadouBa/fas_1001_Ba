@@ -13,6 +13,6 @@ editor: visual
 
 ## Données et méthodes
 
-## Résultats 
+## Résultats
 
 # Conclusion

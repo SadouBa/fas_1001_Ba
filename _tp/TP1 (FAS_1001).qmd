@@ -6,23 +6,24 @@ editor: visual
 date: 22/01/2024
 ---
 
-## Quarto
+## ![](images/image_historique.png)
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Premièrement nous avons cloné un fichier dans notre répertoire grâce à *git clone*
 
-## Running Code
+Ensuite nous avons utilisé *git branch* pour créer une branche dans laquelle nous pourrons apporter des modifications sans corrompre le fichier principal.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Par la suite, nous avons utilisé *git checkout* pour définir la branche que l'on voulait manipulé.
+
+Nous avons aussi utilisé *git add* pour ajouter nos modifications ainsi que *git commit* pour identifier celles-ci.
+
+**Premier commit** : Avec le premier *git add* nous avons crée un fichier quarto du pour le tp1 et avec *git commit nous avons affiché le message: "premier commit"*
+
+**Deuxiéme commit** : Nous avons utilisé *git add pour apporter comme modification un ajout d'un deuxième document quarto en utilisant comme message avec git commit: "creation du document du travail de session"*
+
+Finalement on utilise *git log* pour afficher notre historique
+
+\![image_historique.png\] git log
 
 ```{r}
-1 + 1
+
 ```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
