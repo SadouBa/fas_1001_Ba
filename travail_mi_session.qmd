@@ -1,0 +1,32 @@
+---
+title: "Travail de mi-session"
+author: "Sadou Ba"
+format: pdf
+editor: visual
+---
+
+# Question de recherche
+
+Depuis l’avènement de l’internet, les interactions entre être humain se sont petit à petit transposées sur le web et cela fut notamment observable par l’apparition des médias sociaux au début des années 2000 (Coutant & Stanger, 2012). Les médias sociaux se sont vu devenir une plateforme de prédilection pour exprimer son opinion, rechercher des informations, se faire des amis ou se chercher un emploi. Étant donné la reproduction sociale que l’on peut observer sur les médias sociaux, il serait intéressant de savoir s’il y a aussi une reproduction des enjeux sociaux du monde réel dans le monde virtuel. Cela est notamment observable avec la notion d’ami qui certes à une définition différente sur les réseaux sociaux, toutefois l’on peut observer que dans l’univers virtuel aussi le lien interpersonnel joue un grand rôle. Le média social qui fut un des pionniers en matière de reproduction des liens sociaux fut Facebook (Klein & al, 2012). En effet, avec sa notion d’amis et ainsi que le fait de pouvoir réagir aux publications des uns et des autres en laissant un commentaire ou en montrant son approbation ou sa désapprobation Facebook a été à l’avant-garde à ce niveau. Ces actions rendu possible sur internet par l’entremise des médias sociaux a permis de transposer encore plus les interactions des individus de notre société dans un univers numérique.
+
+  Pouvant constater que les différents groupes d’âges n’ont pas les mêmes dynamiques de socialisation notamment par le fait qu’ils ont des modes de vies différents, soit par le fait qu’ils sont étudiants, travailleurs ou retraités (Galland, 2011). Cette constatation nous a poussé à nous demander si la structure par âge des interactions entre individus du même groupe d’âge changeait lorsque celles-ci se déroulaient sur les médias sociaux. Ainsi, cette interrogation nous a amené à avoir comme question de recherche de représenter les interactions entre les différents groupes d’âges sur les médias sociaux. Nous expliquerons pour la suite de ce document la façon dont nous allons procéder pour réaliser cette étude avec les sources de données utilisés pour effectuer nos analyses ainsi que la méthodologie employée pour mener ces dites analyses.
+
+## Données et Méthode
+
+Pour effectuer nos analyses souhaitées, nous aurons besoins de données en grande quantité pouvant refléter de la meilleure des façons notre objectif de recherche. Ainsi, comme nous l’avions précisé plus tôt, le média social qui est le précurseur de ce type de modèle ainsi que l’un des plus importants, est Facebook nous allons donc utiliser les données de Facebook et ce par l’intermédiaire de la plateforme Crowdtangle. CrowdTangle est principalement utilisé pour analyser et surveiller le contenu sur Facebook. Il fournit des données détaillées sur les performances des publications, les tendances émergentes, les interactions avec le contenu, et bien plus encore. Les chercheurs en sciences sociales peuvent l'utiliser pour étudier les modèles de comportement en ligne, l'engagement de différents groupes d’individus avec les contenus, et pour comprendre comment les informations sont diffusées et perçues par le public sur cette plateforme sociale. Les données que nous utiliserons dans ce travail seront des données sur l’âge des utilisateurs ainsi que les interactions qu’ils ont avec les autres utilisateurs. Pour avoir accès à ces données il faut effectuer une demande d’accès auprès de Crowdtangle en justifiant l’utilisation de ces données pour la recherche que nous souhaitons effectuer. Les années des données récoltés ainsi que le nombre d’observations reste encore à préciser.
+
+Un tableau sera présenté pour montrer le nombre d’observations pour chaque groupe d’âge ainsi que l’année observé.
+
+La méthodologie employée consistera à procéder tout d’abord à un nettoyage de nos données. Cela se fera en retirant les données superflues. Il sera aussi question de renommer nos variables au besoin et de changer nos valeurs en strings. Ainsi, il sera possible de créer notre network avec le paquetage igraph dans R. L’ensemble des manipulations de données seront effectuer sur R.
+
+Après cela, il sera question de présenter les résultats en décrivant les réseaux que nous avons en sorti. Ensuite, il sera question de discuter des résultats obtenus en tentant d’expliquer nos observations.
+
+## Bibliographie : 
+
+Coutant, A. & Stenger, T. (2012). Les médias sociaux : une histoire de participation. *Le Temps des médias*, 18, 76-86. <https://doi.org/10.3917/tdm.018.0076>
+
+Crowdtangle, 2024, <https://help.crowdtangle.com/en/articles/4302208-crowdtangle-for-academics-and-researchers>, consulté le 11 mars 2024.
+
+Galland, O. (2011). Chapitre 5 - Âges de la vie et génération. Dans : , O. Galland, *Sociologie de la jeunesse: 5ème édition* (pp. 99-128). Paris: Armand Colin. <https://doi.org/10.3917/arco.galla.2011.01.0099>.
+
+Klein, A., Proulx, S., Millette, M., & Heaton, L. (2012). FACEBOOK, QUAND TU NOUS TIENS…. In *Médias sociaux: Enjeux pour la communication* (1st ed., pp. 105–116). Presses de l’Université du Québec. <https://doi.org/10.2307/j.ctv18pgp4w.9>.

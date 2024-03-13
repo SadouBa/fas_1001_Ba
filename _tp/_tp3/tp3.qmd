@@ -31,8 +31,7 @@ Pour conclure, nous ne pouvons nous empĉher de penser que nous aurions peut-êt
 
 ## Bibliographie
 
-Rohan Alexander.
-(2023). *Telling stories with data*, <https://rohanalexander.github.io/telling_stories-published/>
+Rohan Alexander. (2023). *Telling stories with data*, <https://rohanalexander.github.io/telling_stories-published/>
 
 Girard-Bossé, 2024, [**Le Parti québécois conforte son avance**]{.underline}, <https://www.lapresse.ca/actualites/politique/2024-02-06/sondage-leger/le-parti-quebecois-conforte-son-avance.php>
 
@@ -40,49 +39,26 @@ Radio-Canada, 2010, <https://ici.radio-canada.ca/nouvelle/457258/rdi-15-love-in>
 
 ## Annexe
 
-```{library(tidyverse)}
-library(quanteda)
-install.packages("stm")
-library(stm)
-library(readr)
-install.packages("wordcloud")
-library(wordcloud)
-before_referendum <- read_csv("_tp/_tp3/1995-10-27.csv")
+\`\`\`{library(tidyverse)} library(quanteda) install.packages("stm") library(stm) library(readr) install.packages("wordcloud") library(wordcloud) before_referendum \<- read_csv("\_tp/\_tp3/1995-10-27.csv")
 
-before_referendum_clean <- before_referendum %>% select(speechtext
-                                                     , speakerparty)
+before_referendum_clean \<- before_referendum %\>% select(speechtext , speakerparty)
 
+bef_ref_corpus \<- corpus(before_referendum, docid_field = "basepk", text_field = "speechtext")
 
-bef_ref_corpus <- corpus(before_referendum,
-                         docid_field = "basepk",
-                         text_field = "speechtext")
-
-bef_ref_dfm <-
-  bef_ref_corpus %>% 
-  tokens(
-    remove_punct = TRUE,
-    remove_symbols = TRUE
-  ) %>% 
-  dfm(tolower = TRUE) %>% 
-  dfm_trim(min_termfreq = 2, min_docfreq = 2) %>% 
-  dfm_remove(stopwords(source = "snowball"))
+bef_ref_dfm \<- bef_ref_corpus %\>% tokens( remove_punct = TRUE, remove_symbols = TRUE ) %\>% dfm(tolower = TRUE) %\>% dfm_trim(min_termfreq = 2, min_docfreq = 2) %\>% dfm_remove(stopwords(source = "snowball"))
 
 # J'ai voulu faire 3 graphiques de wordcloud, mais je n'y suis pas parvenu.
-# Etant donné que je ne voyais pas la visualisation pour le topic modeling, j'ai 
-# eu beaucoup de difficulté à trouver une bonne visualis 
 
-topics_bef_ref <- stm(documents = bef_ref_dfm, K = 3)
+# Etant donné que je ne voyais pas la visualisation pour le topic modeling, j'ai
+
+# eu beaucoup de difficulté à trouver une bonne visualis
+
+topics_bef_ref \<- stm(documents = bef_ref_dfm, K = 3)
 
 labelTopics(topics_bef_ref)
 
-topic_1 <- c("bussiness", "loans", "program", "closure", "companies", "small",
-             "lenders", "cost")
-topic_2 <- c("Canada", "quebec", "regional", "national", "united", "rally", "french",
-             "english", "together")
-topic_3 <- c("yes", "unanimous", "far", "quebec", "government", "position", "achieved")
+topic_1 \<- c("bussiness", "loans", "program", "closure", "companies", "small", "lenders", "cost") topic_2 \<- c("Canada", "quebec", "regional", "national", "united", "rally", "french", "english", "together") topic_3 \<- c("yes", "unanimous", "far", "quebec", "government", "position", "achieved")
 
-wordcloud(topic_1)
-wordcloud(topic_2)
-wordcloud(topic_3)
-  
-```
+wordcloud(topic_1) wordcloud(topic_2) wordcloud(topic_3)
+
+\`\`\`
