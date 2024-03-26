@@ -21,7 +21,7 @@ La méthodologie employée consistera à procéder tout d’abord à un nettoyag
 
 Après cela, il sera question de présenter les résultats en décrivant les réseaux que nous avons en sorti. Ensuite, il sera question de discuter des résultats obtenus en tentant d’expliquer nos observations.
 
-## Bibliographie : 
+## Bibliographie :
 
 Coutant, A. & Stenger, T. (2012). Les médias sociaux : une histoire de participation. *Le Temps des médias*, 18, 76-86. <https://doi.org/10.3917/tdm.018.0076>
 
