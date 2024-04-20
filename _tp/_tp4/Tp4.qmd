@@ -27,7 +27,7 @@ Comme nous pouvons le voir dans la figure 2 la corrélation entre le taux d’in
 
 **Figure 3**
 
-![](images/Capture d’écran 2024-03-26 110238.png){width="555"}
+![](images/Capture%20d’écran%202024-03-26%20110238.png){width="555"}
 
 Dans la figure 3, il est possible de voir les 4 villes ayant un loyer moyen le plus élevé au Québec. Nous remarquons aussi que 2 des villes sont en zone urbaine, soit Gatineau et Montréal ce qui n’est pas surprenant mais aussi deux villes en zone rurales soit Saint-Sauveur et Sainte-Sophie, ce qui est surprenant, mais qui aurait pu être la conséquence du tourisme.
 
